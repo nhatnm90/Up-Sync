@@ -46,7 +46,7 @@ export function SignupForm({ className, ...props }: React.ComponentProps<'div'>)
   const handleGoogleSignIn = useGoogleLogin({
     onSuccess: async (tokenResponse: TokenResponse) => {
       await externalAuthService.googleSignIn(tokenResponse)
-      navigate('/ntodo')
+      navigate('/')
     },
     onError: (errorResponse) => console.log(errorResponse)
   })

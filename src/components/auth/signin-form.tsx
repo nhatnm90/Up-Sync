@@ -34,13 +34,13 @@ export function SignInForm({ className, ...props }: React.ComponentProps<'div'>)
   const onSubmit = async (data: SignInFormValues) => {
     const { username, password } = data
     await signIn(username, password)
-    navigate('/ntodo')
+    navigate('/')
   }
 
   const googleLogin = useGoogleLogin({
     onSuccess: async (tokenResponse: TokenResponse) => {
       await externalAuthService.googleSignIn(tokenResponse)
-      navigate('/ntodo')
+      navigate('/')
     },
     onError: (errorResponse) => console.log(errorResponse)
   })
