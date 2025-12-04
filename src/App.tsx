@@ -7,7 +7,6 @@ import ChatAppPage from '@/pages/ChatAppPage'
 import NotFound from '@/pages/NotFound'
 import TaskPage from '@/pages/TaskPage'
 import LandingPage from '@/pages/LandingPage'
-import LandingPage_1 from '@/pages/LandingPage_1'
 
 function App() {
   return (
@@ -22,7 +21,6 @@ function App() {
           {/* protected routes */}
           <Route element={<ProtectedRoute />}>
             <Route path='/' element={<LandingPage />} />
-            <Route path='/1' element={<LandingPage_1 />} />
             <Route path='/nchat' element={<ChatAppPage />} />
             <Route path='/ntodo' element={<TaskPage />} />
           </Route>

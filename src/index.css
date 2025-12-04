@@ -300,7 +300,7 @@
     @apply bg-background text-foreground;
   }
   .neumorphism {
-    box-shadow: 4px 4px 10px -2px #94a3b8,
-    -4px -4px 10px -2px #f1f5f9;
+    box-shadow: 4px 4px 6px -2px #94a3b8,
+    -4px -4px 6px -2px #f1f5f9;
   }
 }

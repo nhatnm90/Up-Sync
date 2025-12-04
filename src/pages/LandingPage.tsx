@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { SidebarInset, SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
 import { cn } from '@/lib/utils'
-import { BookCheck, MessageCircle, Home, Settings, CircleQuestionMark } from 'lucide-react'
+import { BookCheck, MessageCircle, Home, Settings, DollarSign } from 'lucide-react'
 import { useNavigate } from 'react-router'
 
 const IconMap = {
@@ -13,7 +13,7 @@ const IconMap = {
   MessageCircle: MessageCircle,
   Home: Home,
   Settings: Settings,
-  CircleQuestionMark: CircleQuestionMark
+  DollarSign: DollarSign
 }
 type IconMapKey = keyof typeof IconMap
 
@@ -35,8 +35,8 @@ const data: { mainContain: { id: number; name: string; icon: IconMapKey; url: st
     },
     {
       id: 3,
-      name: 'NHome',
-      icon: 'Home',
+      name: 'NBet',
+      icon: 'DollarSign',
       url: '/1',
       color: 'bg-amber-700'
     },
@@ -49,8 +49,8 @@ const data: { mainContain: { id: number; name: string; icon: IconMapKey; url: st
     // },
     {
       id: 5,
-      name: 'TBD',
-      icon: 'CircleQuestionMark',
+      name: 'Settings',
+      icon: 'Settings',
       url: '/nsetting',
       color: 'bg-gray-700'
     }
@@ -148,28 +148,30 @@ const LandingPage = () => {
               </div>
             </CardHeader>
             <CardContent className='px-2 pt-4 sm:px-6 sm:pt-6'>
-              <div className='grid auto-rows-min gap-10 md:grid-cols-4'>
+              <div className='grid auto-rows-min gap-4 md:grid-cols-4 sm:grid-cols-3 grid-cols-2'>
                 {data.mainContain.map((item) => {
                   const IconComponent = IconMap[item.icon as IconMapKey] || Home
                   return (
                     <div
                       key={item.id}
-                      className='neumorphism aspect-square rounded-2xl flex justify-center items-center p-4 transition-all duration-300 hover:shadow-2xl ring-offset-2'
+                      className='neumorphism aspect-square rounded-2xl p-4
+                      flex justify-center 
+                      items-center
+                      transition-all duration-400 hover:shadow-2xl ring-offset-2'
                     >
+                      {/* <div className='bg-amber-700 w-28 h-28'></div> */}
                       <div
                         onClick={() => navigate(item.url)}
-                        className='p-4 sm:p-8 cursor-pointer hover:scale-[1.03] transition-transform duration-300 flex flex-col items-center justify-center text-center'
+                        className='p-4 sm:p-8 cursor-pointer hover:scale-[1.03]
+                        transition-transform duration-400
+                        flex flex-col
+                        items-center
+                        justify-center'
                       >
                         <div className={cn('p-4 rounded-full mb-4 shadow-inner', item.color.replace('text-', 'bg-'))}>
-                          <IconComponent className={cn('w-8 h-8 md:w-10 md:h-10 text-white')} />
+                          <IconComponent className={cn('w-8 h-8 text-white')} />
                         </div>
-                        {/* <div className='p-4 rounded-full mb-4'>
-                      <IconComponent className='w-8 h-8 md:w-10 md:h-10' />
-                    </div>{' '} */}
-                        <span
-                          // style={{ fontSize: '2em' }}
-                          className={cn('text-4xl font-bold text-gray-600 bg-clip-text md:text-2xl', item.color)}
-                        >
+                        <span className={cn('text-xl font-bold text-gray-600 bg-clip-text', item.color)}>
                           {item.name}
                         </span>
                       </div>
