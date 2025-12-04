@@ -8,7 +8,8 @@ interface RetryConfig extends InternalAxiosRequestConfig {
   _retryCount?: number
 }
 
-const BASE_URL = import.meta.env.MODE === 'development' ? 'http://localhost:2101/api' : '/api'
+const BASE_URL =
+  import.meta.env.VITE_MODE === 'development' ? 'http://localhost:2101/api' : import.meta.env.VITE_SERVER_URL
 
 const api = axios.create({
   baseURL: BASE_URL,

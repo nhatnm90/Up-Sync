@@ -1,10 +1,3 @@
-import { AppSidebar } from '@/components/app-sidebar'
-// import SignOut from '@/components/auth/signout.tsx'
-import { NavActions } from '@/components/nav-actions'
-import { Separator } from '@/components/ui/separator'
-import { SidebarInset, SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
-// import { useAuthStore } from '@/stores/useAuthStore.ts'
-
 const ChatAppPage = () => {
   // Watching all changes of the store
   //const { user } = useAuthStore()
@@ -25,8 +18,7 @@ const ChatAppPage = () => {
       {/* Your Content/Components */}
       <div className='flex flex-1 flex-col gap-4 p-4'>
         <div className='grid auto-rows-min gap-4 md:grid-cols-3'>
-          <div className='neumorphism aspect-square rounded-2xl flex justify-center items-center p-4 transition-all duration-300 hover:shadow-2xl ring-offset-2'>
-          </div>
+          <div className='neumorphism aspect-square rounded-2xl flex justify-center items-center p-4 transition-all duration-300 hover:shadow-2xl ring-offset-2'></div>
           <div className='bg-muted/50 aspect-video rounded-xl' />
           <div className='bg-muted/50 aspect-video rounded-xl' />
         </div>
