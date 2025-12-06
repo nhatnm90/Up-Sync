@@ -20,7 +20,7 @@ const AddTask = ({ fetchTask }: AddTaskProps) => {
 
   const addTask = async () => {
     if (!user) return
-    const taskPayload: TaskPayload = { title: inputTitle, userId: user._id }
+    const taskPayload: TaskPayload = { title: inputTitle, userId: user.id }
     const res = await taskService.addTask(taskPayload)
     if (!res.success) {
       toast.error('Add task error. Please contact admin')

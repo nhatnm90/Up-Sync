@@ -23,7 +23,7 @@ const TaskPage = () => {
 
   const fetchTasks = async () => {
     if (!user) return
-    const res = await taskService.getTasks(dateQuery, user._id)
+    const res = await taskService.getTasks(dateQuery, user.id)
     if (!res.success) {
       toast.error('Error when fetching tasks')
     } else {
@@ -35,7 +35,7 @@ const TaskPage = () => {
 
   useEffect(() => {
     fetchTasks()
-  }, [activeTask, dateQuery, currentPage])
+  }, [dateQuery, currentPage])
 
   const filterTasks =
     taskBuffer.length > 0 &&
